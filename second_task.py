@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw
 import numpy as np
 
 
-def loading_displaying_saving(filename: str = "katran-siniy.jpg", dark: bool = True):
+def area_selection_by_brightness(filename: str = "katran-siniy.jpg", dark: bool = True):
     """
     Selects the darkest/lightest area in the image, limited by a square of 100 by 100 pixels, and displays the image
     """
@@ -26,7 +26,8 @@ def loading_displaying_saving(filename: str = "katran-siniy.jpg", dark: bool = T
                 finish_column += 1
             start_line += 1
             finish_line += 1
-            # zero coordinates of min/max brightness:
+        # zero coordinates of min/max brightness:
+        print(time.time() - start_time)
         if dark:
             x, y = min(domain, key=domain.get)
         else:
@@ -40,4 +41,4 @@ def loading_displaying_saving(filename: str = "katran-siniy.jpg", dark: bool = T
 
 
 if __name__ == "__main__":
-    loading_displaying_saving(dark=True)
+    area_selection_by_brightness("katran-siniy.jpg")
