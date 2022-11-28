@@ -27,10 +27,10 @@ def loading_displaying_saving(filename: str = "katran-siniy.jpg", dark: bool = T
             start_line += 1
             finish_line += 1
             # zero coordinates of min/max brightness:
-            if dark:
-                x, y = min(domain, key=domain.get)
-            else:
-                x, y = max(domain, key=domain.get)
+        if dark:
+            x, y = min(domain, key=domain.get)
+        else:
+            x, y = max(domain, key=domain.get)
         draw = ImageDraw.Draw(img, "RGBA")
         a = ["white" if dark  # selects the color of the square
              else "black"]
@@ -40,4 +40,4 @@ def loading_displaying_saving(filename: str = "katran-siniy.jpg", dark: bool = T
 
 
 if __name__ == "__main__":
-    loading_displaying_saving(dark=False)
+    loading_displaying_saving(dark=True)
